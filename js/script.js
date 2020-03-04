@@ -1,21 +1,29 @@
-//Sky scanner API variable
-let skyAPI = "87be18749cmsh1f47480a6439c3bp1b4306jsn9eaa1f07841c";
-let skyURL = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com"+skyAPI;
+//Open Brewery DB api
+var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_state=NY&by_name=cooper&by_tag=patio&by_type=micro",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "brianiswu-open-brewery-db-v1.p.rapidapi.com",
+		"x-rapidapi-key": "4216cfc2demsh70044cdd79b2200p198cefjsn9754d54ada84"
+	}
+}
 
-
-
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
 
 
 //Map Quest Query
-let mapQuestAPI = "AE679ItGuD0Kuf8tb45Ir4Koo7Bh2D1L";
-let mapURL = "";
+window.onload = function() {
+        L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
 
+        var map = L.mapquest.map('map', {
+          center: [37.7749, -122.4194],
+          layers: L.mapquest.tileLayer('map'),
+          zoom: 12
+        });
 
-
-
-$.ajax({
-    url:skyURL,
-    method: "GET"
-}).then(function(response) {
-console.log(response);
-})
+        map.addControl(L.mapquest.control());
+      }
