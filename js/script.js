@@ -1,12 +1,22 @@
-//Open Brewery DB api
+// ajax call for brewery API
+// This function handles events where the search button is clicked
+let state = "";
+
+$(".btn").on("click", function(event){
+	event.preventDefault();
+
+	return state = $(".location-search").val().trim();
+
+})
+
 var settings = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_state=NY&by_name=cooper&by_tag=patio&by_type=micro",
+	"url": "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?" + state,
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "brianiswu-open-brewery-db-v1.p.rapidapi.com",
-		"x-rapidapi-key": "4216cfc2demsh70044cdd79b2200p198cefjsn9754d54ada84"
+		"x-rapidapi-key": "8aa2f10370msh3096ef7d1d4d2cdp17f191jsn19e1d73b9115"
 	}
 }
 
@@ -26,4 +36,4 @@ window.onload = function() {
         });
 
         map.addControl(L.mapquest.control());
-      }
+	  }
