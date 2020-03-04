@@ -14,7 +14,8 @@ body{
 }
 h1{
     color:black;
-    font-size: 40px;
+    font-size: 60px;
+    font-style: bolder;
     letter-spacing: 3px;
     margin-bottom: 60px;
 }
