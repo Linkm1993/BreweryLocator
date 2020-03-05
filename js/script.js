@@ -23,7 +23,7 @@ $(".btn").on("click", function(event){
 
 	//Sets search paramerters to location entered by user
 	function setQueryUrl(){
-		state = $(".locationh").val().trim();
+		state = $("#location").val().trim();
 		brewName = $(".brewery").val().trim()
 	}
 
