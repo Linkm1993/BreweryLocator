@@ -3,6 +3,7 @@
 let state = "";
 
 
+
 //On click changes value of state, then makes a ajax call
 $(".btn").on("click", function(event){
 	event.preventDefault();
@@ -24,6 +25,7 @@ $(".btn").on("click", function(event){
 			"x-rapidapi-host": "brianiswu-open-brewery-db-v1.p.rapidapi.com",
 			"x-rapidapi-key": "8aa2f10370msh3096ef7d1d4d2cdp17f191jsn19e1d73b9115"
 		}
+
 	}
 	
 	$.ajax(settings).done(function (response) {

@@ -3,9 +3,14 @@ body{
     padding: 0;
 }
 
+body{
+    margin: 0;
+    padding: 0;
+}
+
 .header{
     height: 100vh;
-    background-image: url(../Images/craft-beer1.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(238, 238, 238, 0.281)), url(../Images/craft-beer1.jpg);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -13,9 +18,40 @@ body{
     align-items: center;
 }
 h1{
-    color:black;
-    font-size: 60px;
-    font-style: bolder;
+    color:rgb(177, 172, 172);
+    font-size: 80px;
     letter-spacing: 3px;
     margin-bottom: 60px;
+    font-family: 'Rancho', cursive;
+    align-items: center;
 }
+.brewery-search{
+    height:40px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    width: 400px;
+}
+.location-search{
+    height:40px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    width: 200px;
+}
+.form-box{
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px;
+}
+
+/* font-family: 'Marck Script', cursive;
+font-family: 'Baloo Chettan', cursive;
+font-family: 'Ultra', serif;
+font-family: 'Rock Salt', cursive;
+font-family: 'Damion', cursive;
+font-family: 'Sigmar One', cursive;
+font-family: 'Bebas Neue', cursive;
+font-family: 'Gochi Hand', cursive;
+font-family: 'Oleo Script', cursive;
+font-family: 'Rancho', cursive;
+font-family: 'Fredericka the Great', cursive; */
