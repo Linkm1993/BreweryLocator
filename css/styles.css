@@ -3,6 +3,11 @@ body{
     padding: 0;
 }
 
+body{
+    margin: 0;
+    padding: 0;
+}
+
 .header{
     height: 100vh;
     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(238, 238, 238, 0.281)), url(../Images/craft-beer1.jpg);
