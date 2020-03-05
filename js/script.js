@@ -18,7 +18,7 @@ $(".btn").on("click", function(event){
 	var settings = {
 		"async": true,
 		"crossDomain": true,
-		"url": "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?" + state,
+		"url": "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_state=" + state,
 		"method": "GET",
 		"headers": {
 			"x-rapidapi-host": "brianiswu-open-brewery-db-v1.p.rapidapi.com",
