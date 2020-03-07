@@ -39,8 +39,8 @@ $(".btn").on("click", function(event){
 	function GetSelectedValue(){
 		let tag = $("#tag");
 		let type = $("#type")
-		byTag = tag.options[tag.selectedIndex].value;
-		byType = type.options[type.selectedIndex].value
+		byTag = $(this).val();
+		byType = $(this).val()
 	}
 
 	//Sets search paramerters to location entered by user
@@ -72,15 +72,15 @@ $(".btn").on("click", function(event){
 
 
 
-//Map Quest Query
-window.onload = function() {
-        L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
+// //Map Quest Query
+// window.onload = function() {
+//         L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
 
-        var map = L.mapquest.map('map', {
-          center: [37.7749, -122.4194],
-          layers: L.mapquest.tileLayer('map'),
-          zoom: 12
-        });
+//         var map = L.mapquest.map('map', {
+//           center: [37.7749, -122.4194],
+//           layers: L.mapquest.tileLayer('map'),
+//           zoom: 12
+//         });
 
-        map.addControl(L.mapquest.control());
-	  }
+//         map.addControl(L.mapquest.control());
+// 	  }
