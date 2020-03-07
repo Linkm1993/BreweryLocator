@@ -2,8 +2,8 @@
 // This function handles events where the search button is clicked
 let state = "";
 let brewName = "";
-let byType = "";
-let byTag = "";
+let byType = ["micro", "regional", "brewpub", "large", "planning", "bar", "contract", "proprietor"];
+let byTag = ["dog-friendly", "patio", "food-service", "food-trucks", "tours"];
 let states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
 
 
@@ -15,8 +15,21 @@ for (let i = 0; i < states.length; i++){
     $("#location").append(state);
 }
 
+// adding options into the type dropdown
+for (let i = 0; i < byType.length; i++){
+	let brewType = $("<option>");
+	brewType.text(byType[i]);
+	brewType.attr("value", byType[i]);
+	$("#type").append(brewType);
+}
 
-
+// adding options into the tag dropdown
+for (let i = 0; i < byTag.length; i++){
+	let brewTag = $("<option>");
+	brewTag.text(byTag[i]);
+	brewTag.attr("value", byTag[i]);
+	$("#type").append(brewTag);
+}
 
 //On click changes value of state, then makes a ajax call
 $(".btn").on("click", function(event){
