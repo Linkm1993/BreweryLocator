@@ -81,6 +81,7 @@ $(".btn").on("click", function(event){
 			displayDiv.append(newDiv)
 			newDiv.append(breweryName)
 			newDiv.append(brewName)
+			$(newDiv).addClass("search")
 		}
 	});
 
