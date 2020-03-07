@@ -22,7 +22,7 @@ h1{
     font-size: 80px;
     letter-spacing: 3px;
     margin-bottom: 60px;
-    font-family: 'Rancho', cursive;
+    font-family: 'Fredericka the Great', cursive;
     align-items: center;
     padding-left: 50px;
     
@@ -50,7 +50,7 @@ h1{
     -moz-border-radius: 0px !important;
     border-radius: 0px !important;
 }
-button{
+.btn, .btn-danger, .wrn-btn{
     text-align: center;
 }
 
