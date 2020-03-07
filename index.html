@@ -21,31 +21,52 @@
     <div class="header">
        <form>
            <h1>It's All About the Beer</h1>
-           <div class="form-box columns">
-            
-                <div class="control column">
-                    <input class="brewerey input" type="text" placeholder="Brewery Name">
-                </div>
+           <section class="search-sec">
+            <div class="container">
+                <form action="#" method="post" novalidate="novalidate">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                    <input type="text" class="form-control search-slt" placeholder="Enter a Brewery name" id="brewery">
+                                </div>
 
-                <div class="select column" id="location">
-                    <option value="Alaska">Alaska</option>
-                    <option value="Maryland">Maryland</option>
-                    <option value="New York">New York</option>
-                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                    <input type="text" class="form-control search-slt" placeholder="Enter state" id="state">
+                                </div>
 
-                <div class="select column" id="type">
-                    <select>
-                      <option>Select type</option>
-                      <option>With options</option>
-                    </select>
-                </div>
-            
-               <!-- <input type="text" class="brewery-search" placeholder="Brewery Name, Beers...">
+                                <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                    <select class="form-control search-slt" id="type">
+                                        <option>Select type</option>
+                                        <option>Example one</option>
+                                        <option>Example one</option>
+                                        <option>Example one</option>
+                                        <option>Example one</option>
+                                        <option>Example one</option>
+                                        <option>Example one</option>
+                                    </select>
+                                </div>
 
-               <input type="text" class="location-search" placeholder="Location">
-
-               <button type="button" class="btn btn-info">Search</button> -->
-           </div>
+                                <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                    <select class="form-control search-slt" id="tag">
+                                        <option>Select tag</option>
+                                        <option>Example one</option>
+                                        <option>Example one</option>
+                                        <option>Example one</option>
+                                        <option>Example one</option>
+                                        <option>Example one</option>
+                                        <option>Example one</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                    <button type="button" class="btn btn-danger wrn-btn">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
        </form>
     </div>
 

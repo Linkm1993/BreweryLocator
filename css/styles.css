@@ -43,6 +43,11 @@ h1{
     background-color: rgba(0,0,0,0.5);
     padding: 20px;
 }
+.custom{
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+}
 
 /* font-family: 'Marck Script', cursive;
 font-family: 'Baloo Chettan', cursive;
