@@ -1,12 +1,17 @@
-# Project--TravelAPI
+# Brewery Locator
 
-## User can input specific location and the application will suggest places to go in that area. Then the application would list cheap available plane tickets.
+    User can input specific location and the application will suggest places to go in that area. Then the application would list cheap available plane tickets.
 
 
-# USER STORY: 
+## USER STORY: 
 
-## AS A traveller
+    As A beer enthusiast
 
-## I WANT to be able to select a location and see cheap ticket prices
+    I WANT to be able to search a for specific beer or brewery near my location
 
-## SO THAT I can plan a trip
+    SO THAT i can plan a trip and get directions to visit options provided
+
+## APIs Used
+    Brewery DB API - https://www.brewerydb.com/developers/docs
+
+    MapQuest API - https://developer.mapquest.com/documentation/
