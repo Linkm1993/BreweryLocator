@@ -8,6 +8,12 @@ let states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','Californ
 
 
 // adding options into the location dropdown
+for (let i = 0; i < states.length; i++){
+    let state = $("<option>");
+    state.text(states[i]);
+    state.attr("value", states[i]);
+    $("#location").append(state);
+}
 
 
 
