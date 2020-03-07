@@ -68,6 +68,20 @@ $(".btn").on("click", function(event){
 		console.log(response);
 		console.log(state + " " + brewType + " " + brewTag)
 		console.log(queryURL);
+		//For making buttons and appendin the first 5 search results to them
+		for (i =0; i < 5; i++){
+			let displayDiv = $(".display")
+			let newDiv = $("<button></button>")
+			let breweryName = response[i].name
+			let brewStreet = response[i].street
+			let brewCity = response[i].city
+			let zipCode = response[i].postal_code
+			let brewState = response[i].state
+			let fullAddress = brewStreet + "" + brewCity + "" + brewState + "" + zipCode
+			displayDiv.append(newDiv)
+			newDiv.append(breweryName)
+			newDiv.append(brewName)
+		}
 	});
 
 })
