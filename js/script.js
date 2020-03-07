@@ -31,31 +31,32 @@ for (let i = 0; i < byTag.length; i++){
 	$("#tag").append(brewTag);
 }
 
+//Funcution to get selection from drop down
+function GetSelectedValue(){
+	let tag = $("#tag");
+	let type = $("#type")
+	brewTag = tag.val();
+	brewType = type.val();
+}
+
+//Sets search paramerters to location entered by user
+function setQueryUrl(){
+	state = $("#location").val()
+	brewName = $("#brewery").val().trim()
+}
+
 //On click changes value of state, then makes a ajax call
 $(".btn").on("click", function(event){
 	event.preventDefault();
 
-	//Funcution to get selection from drop down
-	function GetSelectedValue(){
-		let tag = $("#tag");
-		let type = $("#type")
-		byTag = $(this).val();
-		byType = $(this).val()
-	}
-
-	//Sets search paramerters to location entered by user
-	function setQueryUrl(){
-		state = $("#location").val().trim();
-		brewName = $("#brewery").val().trim()
-	}
-
-	//Running the funcutions
+	//Running the functions
 	setQueryUrl()
 	GetSelectedValue()
+	let queryURL = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_state=" + state + "&by_tag=" + brewTag + "&by_type=" + brewType;
 	var settings = {
 		"async": true,
 		"crossDomain": true,
-		"url": "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?" + state + brewName + byTag + byType,
+		"url": queryURL,
 		"method": "GET",
 		"headers": {
 			"x-rapidapi-host": "brianiswu-open-brewery-db-v1.p.rapidapi.com",
@@ -65,6 +66,8 @@ $(".btn").on("click", function(event){
 	
 	$.ajax(settings).done(function (response) {
 		console.log(response);
+		console.log(state + " " + brewType + " " + brewTag)
+		console.log(queryURL);
 	});
 
 })
