@@ -22,8 +22,10 @@ h1{
     font-size: 80px;
     letter-spacing: 3px;
     margin-bottom: 60px;
-    font-family: 'Rancho', cursive;
+    font-family: 'Fredericka the Great', cursive;
     align-items: center;
+    padding-left: 50px;
+    
 }
 .brewery-search{
     height:40px;
@@ -42,6 +44,14 @@ h1{
 .form-box{
     background-color: rgba(0,0,0,0.5);
     padding: 20px;
+}
+.custom{
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+}
+.btn, .btn-danger, .wrn-btn{
+    text-align: center;
 }
 
 /* font-family: 'Marck Script', cursive;
