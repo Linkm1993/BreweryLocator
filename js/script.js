@@ -28,7 +28,7 @@ for (let i = 0; i < byTag.length; i++){
 	let brewTag = $("<option>");
 	brewTag.text(byTag[i]);
 	brewTag.attr("value", byTag[i]);
-	$("#type").append(brewTag);
+	$("#tag").append(brewTag);
 }
 
 //On click changes value of state, then makes a ajax call
