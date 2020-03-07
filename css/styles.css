@@ -24,6 +24,8 @@ h1{
     margin-bottom: 60px;
     font-family: 'Rancho', cursive;
     align-items: center;
+    padding-left: 50px;
+    
 }
 .brewery-search{
     height:40px;
@@ -47,6 +49,9 @@ h1{
     -webkit-border-radius: 0px !important;
     -moz-border-radius: 0px !important;
     border-radius: 0px !important;
+}
+button{
+    text-align: center;
 }
 
 /* font-family: 'Marck Script', cursive;
