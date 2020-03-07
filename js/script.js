@@ -68,6 +68,7 @@ $(".btn").on("click", function(event){
 		console.log(response);
 		console.log(state + " " + brewType + " " + brewTag)
 		console.log(queryURL);
+		getLocation();
 		//For making buttons and appendin the first 5 search results to them
 		for (i =0; i < 5; i++){
 			let displayDiv = $(".display")
@@ -87,7 +88,16 @@ $(".btn").on("click", function(event){
 
 })
 
+// user's current location
+function getLocation(){
+	navigator.geolocation.getCurrentPosition(showPosition);
+}
 
+function showPosition(position){
+	lat = position.coords.latitude;
+	long = position.coords.longitude;
+	console.log(lat + " " + long);
+}
 
 
 // //Map Quest Query
