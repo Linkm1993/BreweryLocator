@@ -84,6 +84,13 @@ $(".btn").on("click", function(event){
 			newDiv.append(brewName)
 			$(newDiv).addClass("search")
 		}
+		$(".search").on("click", function(){
+			//opening a new tab
+			window.open(
+				'map.html',
+				'_blank'
+			  );
+		})
 	});
 
 })
