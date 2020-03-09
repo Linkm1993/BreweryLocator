@@ -54,6 +54,9 @@ h1{
     text-align: center;
 }
 
+#mapid { height: 50vh; }
+
+
 /* font-family: 'Marck Script', cursive;
 font-family: 'Baloo Chettan', cursive;
 font-family: 'Ultra', serif;

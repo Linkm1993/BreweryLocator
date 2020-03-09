@@ -105,7 +105,18 @@ function showPosition(position){
 	long = position.coords.longitude;
 	console.log(lat + " " + long);
 }
-
+//Setting up map display
+//sets map starting location takes [lat, lon], zoom level
+let mymap = L.map('mapid').setView([39.299236, -76.609383], 13);
+//Getting tiles for the map to display
+let tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoibGlua20xOTkiLCJhIjoiY2s3anB6ODlxMHlwYjNlbzlkejRlNXhpYiJ9.GJxrvYaqPdUKQazGlKvzfw'
+}).addTo(mymap);
 
 // //Map Quest Query
 // window.onload = function() {
