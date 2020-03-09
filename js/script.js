@@ -72,7 +72,7 @@ $(".btn").on("click", function(event){
 		//For making buttons and appendin the first 5 search results to them
 		for (i =0; i < 5; i++){
 			let displayDiv = $(".display")
-			let newDiv = $("<button></button>")
+			let newDiv = $("<button class=\"btn btn-danger\"></button>")
 			let breweryName = response[i].name
 			let brewStreet = response[i].street
 			let brewCity = response[i].city

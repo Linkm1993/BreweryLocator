@@ -18,7 +18,7 @@ body{
     align-items: center;
 }
 h1{
-    color:black;
+    color: cadetblue;
     font-size: 80px;
     letter-spacing: 3px;
     margin-bottom: 60px;
@@ -57,7 +57,7 @@ h1{
 #mapid { height: 50vh; }
 
 .display{
-    margin-left: 275px;
+    align-content: center;
 }
 
 
