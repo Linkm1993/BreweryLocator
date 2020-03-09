@@ -1,7 +1,6 @@
 # Brewery Locator
 
-    User can input specific location and the application will suggest places to go in that area. Then the application would list cheap available plane tickets.
-
+User can input brewery name, type of beer, location, types of breweries and tags. Then the application would generate of list of breweries with these filter near by. Once results are generated, the user can choose the best option, which will open into a map for directions.
 
 ## USER STORY: 
 
