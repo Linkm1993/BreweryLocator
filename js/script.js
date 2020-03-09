@@ -2,9 +2,10 @@
 // This function handles events where the search button is clicked
 let state = "";
 let brewName = "";
+let breweryLocation = "";
 let byType = ["micro", "regional", "brewpub", "large", "planning", "bar", "contract", "proprietor"];
 let byTag = ["dog-friendly", "patio", "food-service", "food-trucks", "tours"];
-let states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
+let states = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
 let geo = []
 let breweryLoc = []
 
@@ -78,8 +79,11 @@ $(".btn").on("click", function(event){
 			let brewStreet = JSON.stringify(response[i].street)
 			let brewCity = JSON.stringify(response[i].city)
 			let zipCode = response[i].postal_code
-			let brewState = JSON.stringify(response[i].state)
-			let fullAddress = brewStreet + "+" + brewCity + "+" + brewState
+
+			let brewState = response[i].state
+			let fullAddress = brewStreet + "+" + brewCity + ",+" + brewState;
+			newDiv.attr("value", fullAddress);
+
 			displayDiv.append(newDiv)
 			newDiv.append(breweryName)
 			newDiv.append(brewName)
@@ -98,7 +102,7 @@ $(".btn").on("click", function(event){
 			//opening a new tab
 			window.open(
 				'map.html',
-				'_blank'
+				'_blank',
 			  );
 		})
 	});
