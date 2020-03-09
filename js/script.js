@@ -6,6 +6,7 @@ let byType = ["micro", "regional", "brewpub", "large", "planning", "bar", "contr
 let byTag = ["dog-friendly", "patio", "food-service", "food-trucks", "tours"];
 let states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
 let geo = []
+let breweryLoc = []
 
 // adding options into the location dropdown
 for (let i = 0; i < states.length; i++){
@@ -74,16 +75,25 @@ $(".btn").on("click", function(event){
 			let displayDiv = $(".display")
 			let newDiv = $("<button></button>")
 			let breweryName = response[i].name
-			let brewStreet = response[i].street
-			let brewCity = response[i].city
+			let brewStreet = JSON.stringify(response[i].street)
+			let brewCity = JSON.stringify(response[i].city)
 			let zipCode = response[i].postal_code
-			let brewState = response[i].state
-			let fullAddress = brewStreet + "" + brewCity + "" + brewState + "" + zipCode
+			let brewState = JSON.stringify(response[i].state)
+			let fullAddress = brewStreet + "+" + brewCity + "+" + brewState
 			displayDiv.append(newDiv)
 			newDiv.append(breweryName)
 			newDiv.append(brewName)
+
+			brewStreet = brewStreet.replace(" ", "+")
+			brewCity = brewCity.replace(" ", "+")
+			brewState = brewState.replace(" ", "+")
+			console.log(brewStreet)
 			$(newDiv).addClass("search")
+			newDiv.attr("value", fullAddress)
+
 		}
+		console.log(response.name)
+		console.log(response)
 		$(".search").on("click", function(){
 			//opening a new tab
 			window.open(
