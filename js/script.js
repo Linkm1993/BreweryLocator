@@ -5,7 +5,7 @@ let brewName = "";
 let byType = ["micro", "regional", "brewpub", "large", "planning", "bar", "contract", "proprietor"];
 let byTag = ["dog-friendly", "patio", "food-service", "food-trucks", "tours"];
 let states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
-
+let geo = []
 
 // adding options into the location dropdown
 for (let i = 0; i < states.length; i++){
@@ -103,7 +103,10 @@ function getLocation(){
 function showPosition(position){
 	lat = position.coords.latitude;
 	long = position.coords.longitude;
-	console.log(lat + " " + long);
+	let push = (lat + "," + long)
+	// console.log(lat + "," + long);
+	geo.push(push)
+	console.log(geo)
 }
 //Setting up map display
 //sets map starting location takes [lat, lon], zoom level
@@ -117,16 +120,3 @@ let tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoibGlua20xOTkiLCJhIjoiY2s3anB6ODlxMHlwYjNlbzlkejRlNXhpYiJ9.GJxrvYaqPdUKQazGlKvzfw'
 }).addTo(mymap);
-
-// //Map Quest Query
-// window.onload = function() {
-//         L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
-
-//         var map = L.mapquest.map('map', {
-//           center: [37.7749, -122.4194],
-//           layers: L.mapquest.tileLayer('map'),
-//           zoom: 12
-//         });
-
-//         map.addControl(L.mapquest.control());
-// 	  }
