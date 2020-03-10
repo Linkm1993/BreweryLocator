@@ -18,14 +18,25 @@ body{
     align-items: center;
 }
 h1{
-    color: cadetblue;
+    color: white;
     font-size: 80px;
     letter-spacing: 3px;
     margin-bottom: 60px;
     font-family: 'Fredericka the Great', cursive;
     align-items: center;
-    padding-left: 50px;
+    padding-left: 50px; 
+    font-weight: 20px;
     
+    text-shadow: 2px 2px 4px #000000;
+}
+h2{
+    color: cadetblue;
+    font-size: 40px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    font-family: 'Fredericka the Great', cursive;
+    align-items: center;
+    padding-left: 10px;
 }
 .brewery-search{
     height:40px;
@@ -57,7 +68,7 @@ h1{
 #mapid { height: 50vh; }
 
 .display{
-    align-content: center;
+    text-align: justify;
 }
 
 
