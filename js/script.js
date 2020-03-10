@@ -107,6 +107,9 @@ $(".btn").on("click", function(event){
 				'map.html',
 				'_blank',
 			  );
+			
+			  // mapquest ajax call
+			  mapQuestDirection(geo, fullAddress)
 		})
 	});
 
@@ -139,25 +142,15 @@ let tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
 }).addTo(mymap);
 
 
+// ajax mapquest request
+function mapQuestDirection(userLocation, address){
+	let mapQuestURL = "http://www.mapquestapi.com/directions/v2/route?key="+mqKey+"&from="+userLocation+"&to="+address
+	let mqKey = "AE679ItGuD0Kuf8tb45Ir4Koo7Bh2D1L"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Need to pass the value of the inputs on the map.html and replace the spaces with +
+	$.ajax({
+		url: mapQuestURL,
+		method: "GET"
+	}).then(function(response){
+		console.log(response);
+	})
+}
