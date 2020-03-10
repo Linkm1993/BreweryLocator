@@ -80,6 +80,12 @@ $(".btn").on("click", function(event){
 			let brewCity = JSON.stringify(response[i].city)
 			let zipCode = response[i].postal_code
 
+			// replacing all spaces with a plus sign
+			for (let i = 0; i < brewStreet.length; i++)
+			{
+				brewStreet = brewStreet.replace(" ", "+")
+			}
+
 			let brewState = response[i].state
 			let fullAddress = brewStreet + "+" + brewCity + ",+" + brewState;
 			newDiv.attr("value", fullAddress);
@@ -87,11 +93,9 @@ $(".btn").on("click", function(event){
 			displayDiv.append(newDiv)
 			newDiv.append(breweryName)
 			newDiv.append(brewName)
-
-			brewStreet = brewStreet.replace(" ", "+")
 			brewCity = brewCity.replace(" ", "+")
 			brewState = brewState.replace(" ", "+")
-			console.log(brewStreet)
+			console.log(fullAddress);
 			$(newDiv).addClass("search")
 			newDiv.attr("value", fullAddress)
 
