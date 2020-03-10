@@ -107,6 +107,9 @@ $(".btn").on("click", function(event){
 				'map.html',
 				'_blank',
 			  );
+			
+			  // mapquest ajax call
+			  mapQuestDirection(geo, fullAddress)
 		})
 	});
 
@@ -137,3 +140,16 @@ let tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoibGlua20xOTkiLCJhIjoiY2s3anB6ODlxMHlwYjNlbzlkejRlNXhpYiJ9.GJxrvYaqPdUKQazGlKvzfw'
 }).addTo(mymap);
+
+// ajax mapquest request
+function mapQuestDirection(userLocation, address){
+	let mapQuestURL = "http://www.mapquestapi.com/directions/v2/route?key="+mqKey+"&from="+userLocation+"&to="+address
+	let mqKey = "AE679ItGuD0Kuf8tb45Ir4Koo7Bh2D1L"
+
+	$.ajax({
+		url: mapQuestURL,
+		method: "GET"
+	}).then(function(response){
+		console.log(response);
+	})
+}
