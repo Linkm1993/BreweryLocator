@@ -141,6 +141,7 @@ let tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
     accessToken: 'pk.eyJ1IjoibGlua20xOTkiLCJhIjoiY2s3anB6ODlxMHlwYjNlbzlkejRlNXhpYiJ9.GJxrvYaqPdUKQazGlKvzfw'
 }).addTo(mymap);
 
+
 // ajax mapquest request
 function mapQuestDirection(userLocation, address){
 	let mapQuestURL = "http://www.mapquestapi.com/directions/v2/route?key="+mqKey+"&from="+userLocation+"&to="+address
