@@ -76,8 +76,8 @@ $(".btn").on("click", function(event){
 			let displayDiv = $(".display")
 			let newDiv = $("<button class=\"btn btn-danger\"></button>")
 			let breweryName = response[i].name
-			let brewStreet = JSON.stringify(response[i].street)
-			let brewCity = JSON.stringify(response[i].city)
+			let brewStreet = response[i].street
+			let brewCity = response[i].city
 			let zipCode = response[i].postal_code
 
 			// replacing all spaces with a plus sign
