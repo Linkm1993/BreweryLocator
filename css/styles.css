@@ -3,11 +3,6 @@ body{
     padding: 0;
 }
 
-body{
-    margin: 0;
-    padding: 0;
-}
-
 .header{
     height: 100vh;
     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(238, 238, 238, 0.281)), url(../Images/craft-beer1.jpg);
@@ -18,25 +13,32 @@ body{
     align-items: center;
 }
 h1{
-    color: white;
+    color:rgb(228, 215, 157);
     font-size: 80px;
     letter-spacing: 3px;
     margin-bottom: 60px;
     font-family: 'Fredericka the Great', cursive;
-    align-items: center;
+    text-align: center;
     padding-left: 50px; 
     font-weight: 20px;
-    
     text-shadow: 2px 2px 4px #000000;
 }
 h2{
-    color: cadetblue;
+    color:rgb(228, 215, 157);
     font-size: 40px;
     letter-spacing: 3px;
     margin-bottom: 10px;
     font-family: 'Fredericka the Great', cursive;
     align-items: center;
     padding-left: 10px;
+    text-shadow: 2px 2px 4px #000000;
+}
+p{
+    color:rgb(228, 215, 157);
+    font-size: large;
+    text-align: center;
+    margin-left: 100px;
+    text-shadow: 2px 2px 4px #000000;
 }
 .brewery-search{
     height:40px;
@@ -68,8 +70,12 @@ h2{
 #mapid { height: 50vh; }
 
 .display{
-    text-align: justify;
+    margin-left: 250px;
 }
+.col-lg-12{
+    margin-left: 100px;
+}
+
 
 
 /* font-family: 'Marck Script', cursive;
