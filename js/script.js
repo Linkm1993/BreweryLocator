@@ -58,7 +58,7 @@ $(".btn").on("click", function(event){
 	clear()
 	setQueryUrl()
 	GetSelectedValue()
-	let queryURL = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_state=" + state + "&by_tag=" + brewTag + "&by_type=" + brewType;
+	let queryURL = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_state=" + state + "&by_name="+brewName +"&by_tag=" + brewTag + "&by_type=" + brewType;
 	var settings = {
 		"async": true,
 		"crossDomain": true,
