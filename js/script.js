@@ -189,4 +189,21 @@ $(".directions").on("click", function(event){
 		start: startLoc,
 		end: endLoc
 	  });
+
+	  let directionsURL = "http://www.mapquestapi.com/directions/v2/route?key=AE679ItGuD0Kuf8tb45Ir4Koo7Bh2D1L&from="+startLoc+"&to="+endLoc
+
+	$.ajax({
+		url:directionsURL,
+		method: "GET"
+	}).then(function(output){
+		console.log(output)
+		let dirLegth = output.route.legs[0].maneuvers
+		console.log(dirLegth)
+
+		for(i = 0; i < dirLegth.length; i++){
+			let pirntDivs = $("<div></div>")
+			pirntDivs.text("In " + dirLegth[i].distance + " miles: "+dirLegth[i].narrative)
+			$(".dir").append(pirntDivs)
+		}
+	})
   });
