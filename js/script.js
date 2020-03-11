@@ -202,6 +202,7 @@ $(".directions").on("click", function(event){
 
 		for(i = 0; i < dirLegth.length; i++){
 			let pirntDivs = $("<div></div>")
+			pirntDivs.addClass("turns")
 			pirntDivs.text("In " + dirLegth[i].distance + " miles: "+dirLegth[i].narrative)
 			$(".dir").append(pirntDivs)
 		}
