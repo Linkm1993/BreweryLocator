@@ -2,13 +2,11 @@
 // This function handles events where the search button is clicked
 let state = "";
 let brewName = "";
-let breweryLocation = "";
 let fullAddress = "";
 let byType = ["micro", "regional", "brewpub", "large", "planning", "bar", "contract", "proprietor"];
 let byTag = ["dog-friendly", "patio", "food-service", "food-trucks", "tours"];
 let states = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
 let geo = []
-let breweryLoc = []
 
 // adding options into the location dropdown
 for (let i = 0; i < states.length; i++){
@@ -101,9 +99,6 @@ $(".btn").on("click", function(event){
 			console.log(fullAddress);
 			$(newDiv).addClass("search")
 			newDiv.attr("value", fullAddress)
-			console.log(fullAddress)
-
-		
 		}
 
 		console.log(response)
@@ -154,9 +149,8 @@ let tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
 
 
 // ajax mapquest request
-function mapQuestDirection(userLocation, address){
-	let mapQuestURL = "http://www.mapquestapi.com/directions/v2/route?key="+mqKey+"&from="+userLocation+"&to="+address
-	let mqKey = "AE679ItGuD0Kuf8tb45Ir4Koo7Bh2D1L"
+function mapQuestDirection(mKey, userLocation, address){
+	let mapQuestURL = "http://www.mapquestapi.com/directions/v2/route?key="+mKey+"&from="+userLocation+"&to="+address
 
 	$.ajax({
 		url: mapQuestURL,
@@ -165,3 +159,16 @@ function mapQuestDirection(userLocation, address){
 		console.log(response);
 	})
 }
+
+// getting item from local storage
+let start = localStorage.getItem("Starting Location");
+let end = localStorage.getItem("Brewery Location");
+let mqKey = "AE679ItGuD0Kuf8tb45Ir4Koo7Bh2D1L"
+
+// getting directions button on click
+$(".directions").on("click", function(event){
+	event.preventDefault();
+
+	//ajax call using the local storage values
+	mapQuestDirection(mqKey, start, end);
+})
