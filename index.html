@@ -20,10 +20,12 @@
 <body>
     <div class="header">
        <form>
+           <!--Slogan-->
            <h1>It's All About the Beer</h1>
            <section class="search-sec">
             <div class="container">
                 <form action="#" method="post" novalidate="novalidate">
+                    <!--Row for search titles-->
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                             <p>Brewery Name</p>
@@ -37,11 +39,14 @@
                         <div class="col-lg-2 col-md-2 col-sm-12 p-0">
                             <p>Filters</p>
                         </div>
+                        <!--Row for search input box and dropdowns-->
                         <div class="col-lg-12">
                             <div class="row">
+                                <!--Input box takes up later column space-->
                                 <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                                     <input type="text" class="form-control search-slt" placeholder="Enter a Brewery name" id="brewery">
                                 </div>
+                                <!--3 Drop downs-->
                                 <div class="col-lg-2 col-md-2 col-sm-12 p-0">
                                     <select class="form-control search-slt" id="location">
                                         <option></option>
@@ -52,11 +57,12 @@
                                         <option></option>
                                     </select>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-12 p-0">
+                                <div class="col-lg-2 col-md-2 col-sm-12 p-0"> 
                                     <select class="form-control search-slt" id="tag">
                                         <option></option>
                                     </select>
                                 </div>
+                                <!--Search button-->
                                 <div class="col-lg-2 col-md-2 col-sm-12 p-0">
                                     <button type="button" class="btn btn-danger wrn-btn">Search</button>
                                 </div>
@@ -64,6 +70,7 @@
                         </div>
                     </div>
                     <br>
+                    <!--Title for search results and display of brewery names as buttons-->
                     <h2>Search Results:</h2>
                     <div class="display btn-group-vertical"></div>
                 </form>
