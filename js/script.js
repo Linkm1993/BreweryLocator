@@ -108,6 +108,9 @@ $(".btn").on("click", function(event){
 
 		console.log(response)
 		$(".search").on("click", function(){
+			// setting local storage
+			localStorage.setItem("Brewery Location", $(this).attr("value"))
+
 			//opening a new tab
 			window.open(
 				'map.html',
