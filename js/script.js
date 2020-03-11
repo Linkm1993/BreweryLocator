@@ -47,12 +47,15 @@ function setQueryUrl(){
 	state = $("#location").val()
 	brewName = $("#brewery").val().trim()
 }
-
+function clear(){
+	$(".display").empty();
+}
 //On click changes value of state, then makes a ajax call
 $(".btn").on("click", function(event){
 	event.preventDefault();
 
 	//Running the functions
+	clear()
 	setQueryUrl()
 	GetSelectedValue()
 	let queryURL = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_state=" + state + "&by_tag=" + brewTag + "&by_type=" + brewType;
@@ -98,8 +101,11 @@ $(".btn").on("click", function(event){
 			console.log(fullAddress);
 			$(newDiv).addClass("search")
 			newDiv.attr("value", fullAddress)
+			console.log(fullAddress)
 
+		
 		}
+
 		console.log(response)
 		$(".search").on("click", function(){
 			//opening a new tab
@@ -126,7 +132,9 @@ function showPosition(position){
 	let push = (lat + "," + long)
 	// console.log(lat + "," + long);
 	geo.push(push)
-	console.log(geo)
+	//Storing users geo location in local storage
+	localStorage.setItem("Starting Location", geo[0])
+
 }
 //Setting up map display
 //sets map starting location takes [lat, lon], zoom level
