@@ -96,7 +96,6 @@ $(".btn").on("click", function(event){
 			newDiv.append(brewName)
 			brewCity = brewCity.replace(" ", "+")
 			brewState = brewState.replace(" ", "+")
-			console.log(fullAddress);
 			$(newDiv).addClass("search")
 			newDiv.attr("value", fullAddress)
 		}
@@ -134,10 +133,11 @@ function showPosition(position){
 	localStorage.setItem("Starting Location", geo[0])
 
 }
-//Setting up map display
+// Setting up map display
 //sets map starting location takes [lat, lon], zoom level
 let mymap = L.map('mapid').setView([39.299236, -76.609383], 13);
-//Getting tiles for the map to display
+
+// Getting tiles for the map to display
 let tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -146,6 +146,9 @@ let tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoibGlua20xOTkiLCJhIjoiY2s3anB6ODlxMHlwYjNlbzlkejRlNXhpYiJ9.GJxrvYaqPdUKQazGlKvzfw'
 }).addTo(mymap);
+
+// getting route for the map to display
+let route = L.
 
 
 // ajax mapquest request
@@ -156,6 +159,10 @@ function mapQuestDirection(mKey, userLocation, address){
 		url: mapQuestURL,
 		method: "GET"
 	}).then(function(response){
+		L.mapquest.directions().route({
+			start: userLocation,
+			end: address,
+		}).addto(mymap);
 		console.log(response);
 	})
 }
