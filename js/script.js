@@ -148,7 +148,10 @@ let tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
 }).addTo(mymap);
 
 // getting route for the map to display
-let route = L.
+// let route = L.directions.route({
+// 	start: userLocation,
+// 	end: address
+// }).addTo(mymap)
 
 
 // ajax mapquest request
