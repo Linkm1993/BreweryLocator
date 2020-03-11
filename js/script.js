@@ -62,33 +62,57 @@ $(".btn").on("click", function(event){
 		}
 	}
 	$.ajax(settings).done(function (response) {
-		console.log(response);
-		console.log(state + " " + brewType + " " + brewTag)
-		console.log(queryURL);
-		getLocation();
-		//For making buttons and appendin the first 5 search results to them
-		for (i =0; i < 5; i++){
-			let displayDiv = $(".display")
-			let newDiv = $("<button class=\"btn btn-danger\"></button>")
-			let breweryName = response[i].name
-			let brewStreet = response[i].street
-			let brewCity = response[i].city
-			// replacing all spaces with a plus sign
-			for (let i = 0; i < brewStreet.length; i++)
-			{
-				brewStreet = brewStreet.replace(" ", "+")
-			}
-			let brewState = response[i].state
-			fullAddress = brewStreet + "+" + brewCity + ",+" + brewState;
-			newDiv.attr("value", fullAddress);
-			displayDiv.append(newDiv)
-			newDiv.append(breweryName)
-			newDiv.append(brewName)
-			brewCity = brewCity.replace(" ", "+")
-			brewState = brewState.replace(" ", "+")
-			$(newDiv).addClass("search")
-			newDiv.attr("value", fullAddress)
-		}
+        // asking the user to let us know the location
+        getLocation();
+        //For making buttons and appendin the first 5 search results to them
+        if(response.length == 1){
+            let displayDiv = $(".display")
+            let newDiv = $("<button class=\"btn btn-danger\"></button>")
+            let breweryName = response[0].name
+            let brewStreet = response[0].street
+            let brewCity = response[0].city
+            // replacing all spaces with a plus sign
+            for (let i = 0; i < brewStreet.length; i++){
+                brewStreet = brewStreet.replace(" ", "+")
+            }
+            let brewState = response[0].state
+            fullAddress = brewStreet + "+" + brewCity + ",+" + brewState;
+            newDiv.attr("value", fullAddress);
+            displayDiv.append(newDiv)
+            newDiv.append(breweryName)
+            newDiv.append(brewName)
+            brewCity = brewCity.replace(" ", "+")
+            brewState = brewState.replace(" ", "+")
+            $(newDiv).addClass("search")
+            newDiv.attr("value", fullAddress)
+        }
+        else if (response.length > 1){
+            for (i =0; i < 5; i++){
+                let displayDiv = $(".display")
+                let newDiv = $("<button class=\"btn btn-danger\"></button>")
+                let breweryName = response[i].name
+                let brewStreet = response[i].street
+                let brewCity = response[i].city
+                // replacing all spaces with a plus sign
+                for (let i = 0; i < brewStreet.length; i++)
+                {
+                    brewStreet = brewStreet.replace(" ", "+")
+                }
+                let brewState = response[i].state
+                fullAddress = brewStreet + "+" + brewCity + ",+" + brewState;
+                newDiv.attr("value", fullAddress);
+                displayDiv.append(newDiv)
+                newDiv.append(breweryName)
+                newDiv.append(brewName)
+                brewCity = brewCity.replace(" ", "+")
+                brewState = brewState.replace(" ", "+")
+                $(newDiv).addClass("search")
+                newDiv.attr("value", fullAddress)
+            }
+        }
+        else{
+            $(".display").text("No results found.");
+        }
 		console.log(response)
 		$(".search").on("click", function(){
 			// setting local storage
