@@ -2,6 +2,11 @@
 
 User can input brewery name, type of beer, location, types of breweries and tags. Then the application would generate of list of breweries with these filter near by. Once results are generated, the user can choose the best option, which will open into a map for directions.
 
+## Webpage
+
+    https://linkm1993.github.io/Brewery-Locator/?
+
+
 ## USER STORY: 
 
     As A beer enthusiast
